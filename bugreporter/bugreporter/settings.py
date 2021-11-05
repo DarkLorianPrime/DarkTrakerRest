@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'authserver',
     'rest_framework',
-    'projects'
+    'projects',
+    'bugs',
+    'token_receiver',
+    'stages',
+    'tags'
 ]
 
 MIDDLEWARE = [
@@ -49,7 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'authserver.middlewares.authenicate_middleware.LoginMiddleware'
+    'authserver.middlewares.authenicate_middleware.LoginMiddleware',
+    'authserver.middlewares.Token_middleware.TokenMiddleware'
 ]
 
 ROOT_URLCONF = 'bugreporter.urls'

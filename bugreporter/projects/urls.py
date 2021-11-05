@@ -2,11 +2,11 @@ from django.urls import path
 
 from projects import views
 
-name = 'authserver'
+name = 'projects'
 
 urlpatterns = [
-    path('projects/', views.UserProjects.as_view({'get': 'list', 'post': 'create'})),
-    path('projects/<int:pk>', views.UserProjects.as_view({'delete': 'destroy'}))
-    # path('projects/', views.UserProjects.as_view({'get': 'list_projects', 'post': 'create_project'})),
-    # path('projects/<str:username>/', views.UserProjects.as_view({'get': 'get_projects'}))
+    path('projects/<str:username>/', views.UserProjects.as_view({'get': 'list', 'post': 'create'})),
+    path('projects/<str:username>/<str:projectname>/visible/',
+         views.Settings.as_view({'post': 'update'})),
+    path('projects/<str:username>/delete/<str:id>/', views.UserProjects.as_view({'delete': 'destroys'}))
 ]
