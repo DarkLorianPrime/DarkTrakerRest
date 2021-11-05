@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
 
-from authserver.Serializer import RegistrationSerializer
+from authserver.serializer import RegistrationSerializer
 from extras.decorators import is_logged_in, is_not_logged_in, is_not_token_valid
 from extras.isCheckers import isEmail
 from authserver.models import UserToken

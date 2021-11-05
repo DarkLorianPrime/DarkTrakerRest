@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet, ViewSet
 
 from authserver.models import UserToken
-from bugs.Serializers import BugSerializer, CommentSerializer
+from bugs.serializers import BugSerializer, CommentSerializer
 from bugs.models import Report
 from stages.models import WorkStages
 from extras.decorators import is_logged_in, is_not_token_valid

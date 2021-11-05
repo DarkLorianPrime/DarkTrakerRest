@@ -7,14 +7,14 @@ from rest_framework.viewsets import ModelViewSet, ViewSet
 from authserver.models import UserToken
 from bugs.models import Report
 from extras.decorators import is_not_token_valid, is_logged_in
-from stages import Serializers
+from stages import serializers
 from stages.models import WorkStages
 from projects.models import Project
 
 
 class Stages(ModelViewSet):
     queryset = WorkStages.objects.all()
-    serializer_class = Serializers.StagesSerializer
+    serializer_class = serializers.StagesSerializer
 
     def get_queryset(self, *args, **kwargs):
         token = self.request.session.get('name')

@@ -10,7 +10,7 @@ from authserver.models import UserToken
 from bugs.models import Report
 from extras.decorators import is_not_token_valid, is_logged_in
 from projects.models import Project
-from tags.Serializator import TagsSerializer
+from tags.serializator import TagsSerializer
 from tags.models import Tag
 
 
